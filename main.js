@@ -1,0 +1,86 @@
+
+canvas = document.getElementById("myCanvas");
+ctx= canvas.getContext("2d");
+
+
+   
+canvas.addEventListener("mousedown", my_mousedown);
+
+function my_mousedown(e)
+{
+    //taking color from input box
+    //additional activity start
+    color = document.getElementById("color").value;
+    console.log(color);
+     width = document.getElementById("width").value;
+    console.log(width);
+    //addition activity ends
+    
+     mouse_x = e.clientX - canvas.offsetLeft;
+     mouse_y = e.clientY - canvas.offsetTop;
+
+    console.log("X = " + mouse_x + " ,Y =  " + mouse_y);
+    circle(mouse_x , mouse_y);    
+}
+
+function circle(mouse_x , mouse_y)
+{
+ctx.beginPath();
+ctx.strokeStyle = color;
+ctx.lineWidth = width;
+ctx.arc(mouse_x, mouse_y, 10 ,0 , 2*Math.PI);
+ctx.stroke();
+}
+
+ctx.beginPath();
+ctx.strokeStyle = "violet";
+ctx.lineWidth = 5;
+ctx.arc(400, 250, 200 ,3 , 2*Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = "Indigo";
+ctx.lineWidth = 5;
+ctx.arc(400, 250,180,3,2*Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = "green";
+ctx.lineWidth = 5;
+ctx.arc(400, 250,140,3,2*Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = "yellow";
+ctx.lineWidth = 5;
+ctx.arc(400, 250,120,3,2*Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = "red";
+ctx.lineWidth = 5;
+ctx.arc(400, 250,80,3,2*Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = "orange";
+ctx.lineWidth = 5;
+ctx.arc(400, 250,100,3,2*Math.PI);
+ctx.stroke();
+
+
+ctx.beginPath();
+ctx.strokeStyle = "blue";
+ctx.lineWidth = 5;
+ctx.arc(400, 250,160,3,2*Math.PI);
+ctx.stroke();
+
+
+//additional activity
+
+function clearArea()
+{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+	
